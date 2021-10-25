@@ -48,19 +48,52 @@ console.log(compareInt(12, 55, 100));
 
 /* 6. Create a function to create a new string composed of a specified number of copies of a given string. 
     Pass the string and the number of copies as parameters. */
+function repeatedString(string){
+  let newString = string.repeat(20)
+  return `I like  + ${newString}`;
+}
 
+console.log(repeatedString("IceCream"))
 
 /* 7. Create a function to display the city name if the string begins with "Los" or "New". 
     Pass the city name as a parameter. Return `false` if they start with a different string. */
-
+const cityName = function (city) {
+    if (city.startsWith("Los") || city.startsWith("New")) {
+        return city;
+    } 
+    else {
+          return false;
+    }
+ };
+console.log(cityName("lisboa"))
 
 /* 8. Create a function to calculate and return the sum of all elements from an array with 3 elements. 
     Pass the array as a parameter. */
-
+let newArray = [4, 7, 1];
+function sumOfAllElements(){
+    let sum = 0;
+    for (let i=0; i<newArray.length; i++){
+        sum += newArray[i];
+    }
+    return sum;
+}
+console.log(sumOfAllElements());
 
 /* 9. Create a function to test if an array of lenght 2 contains 1 OR 3. 
     Return `true` is it does, `false` if it doesn't. */
+let smallArray = [4 , 6]
+function testAnArray(){
+    for(let i=0; i<smallArray.length; i++){
+        if(smallArray[i] === 1 || smallArray[i] === 3){
+            return true;  
+        }
+        else {
+            return false;
+        } 
+    }
+}
 
+console.log(testAnArray())
 
 /* 10. Create a function to test if an array of lenght 2 DOES NOT contain 1 or 3. 
     Return `true` if it doesn't, `false` if it does. */ 
