@@ -11,15 +11,13 @@ function trueFalse(int1 , int2){
     return true;
     else return false;
 }
-console.log(trueFalse(11 , 39))
+console.log(trueFalse(11 , 25))
 
 /* 3. Create a function to remove a character at a specified position from a given string: pass the position and the string as parameters, return the new string. */
-function removeChar(){
-    let str = "Strive school";
-    str = str.slice(0 , 5) + str.slice(6 , 12);
-    return str
+function removeChar(str , pos){
+    return str.slice(0 , pos-1) + str.slice(pos)
 }
-console.log(removeChar())
+console.log(removeChar("strive" , 6))
 
 /* 4. Create a function to find and return the largest of three given integers. */
 function compareInt(int1, int2, int3){
@@ -44,12 +42,12 @@ console.log(rangeOfNumbers(95, 50));
 
 /* 6. Create a function to create a new string composed of a specified number of copies of a given string. 
     Pass the string and the number of copies as parameters. */
-function repeatedString(string){
-  let newString = string.repeat(20)
-  return `I like  + ${newString}`;
+function repeatedString(string, number){
+  let newString = string.repeat(number)
+  return `I like ${newString}`;
 }
 
-console.log(repeatedString("IceCream"))
+console.log(repeatedString("IceCream " , 6))
 
 /* 7. Create a function to display the city name if the string begins with "Los" or "New". 
     Pass the city name as a parameter. Return `false` if they start with a different string. */
@@ -85,7 +83,7 @@ console.log(sumOfAllElements([4, 7, 1]));
         }
     }
 
-console.log(testAnArray([11 , 13]));
+console.log(testAnArray([11 , 3]));
 
 /* 10. Create a function to test if an array of lenght 2 DOES NOT contain 1 or 3. 
     Return `true` if it doesn't, `false` if it does. */ 
@@ -102,17 +100,21 @@ console.log(testAnArrayNew([11 , 13]));
 
 // 11. Create a function to find the longest string from a given array of strings. 
 //     Pass the array as parameter and return the longest string.
-    function longestStringOfArray(){
-        let arrayOfString = ["css" , "html" , "javascript" , "golang"];
-        for(let i=0; i<arrayOfString.length; i++){
-           let eachStringLength = arrayOfString[i].length
-           let emptyArr = [].push(eachStringLength);
-           return emptyArr
-        }
-        
+    function longestStringOfArray(arrNew){
+        let shortString = 0;
+        let nextString = "";
+        for(let i=0; i<arrNew.length; i++){
+           let eachString = arrNew[i];
+           if(shortString<eachString.length){
+            shortString = eachString.length;
+            nextString = eachString;
+           }
+        }        
+        return nextString;
 }
 
-console.log(longestStringOfArray())
+console.log(longestStringOfArray(["css" , "html" , "javascript"]))
+
 /* 12. Create a function to find the types of a given angle:
   1. Acute angle â‡’ between 0 and 90 degrees. Return `acute`.
     2. Right angle â‡’ 90 degree. Return `right`
