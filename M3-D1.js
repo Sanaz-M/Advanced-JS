@@ -36,15 +36,11 @@ console.log(compareInt(12, 55, 100));
 /* 5. Create a function to check if two numbers are in the range 40-60 or 70-100. 
     Return `true` if they do, return `false` if one (or both) don't. */
  function rangeOfNumbers(n1 , n2){
-    switch(n1 , n2){
-        case ((n1>40 && n1<60) || (n1>70 && n1<100)) && ((n2>40 && n2<60) || (n2>70 && n2<100)): return true;
-        break;
-        default: return false;
-        break;
-    }
+        return ((n1>40 && n1<60) || (n1>70 && n1<100)) && ((n2>40 && n2<60) || (n2>70 && n2<100));
 }
-    
-    console.log(rangeOfNumbers(95 , 50));
+ 
+console.log(rangeOfNumbers(95, 50));
+
 
 /* 6. Create a function to create a new string composed of a specified number of copies of a given string. 
     Pass the string and the number of copies as parameters. */
@@ -69,61 +65,49 @@ console.log(cityName("lisboa"))
 
 /* 8. Create a function to calculate and return the sum of all elements from an array with 3 elements. 
     Pass the array as a parameter. */
-let newArray = [4, 7, 1];
-function sumOfAllElements(){
+
+function sumOfAllElements(newArray){
     let sum = 0;
     for (let i=0; i<newArray.length; i++){
         sum += newArray[i];
     }
     return sum;
 }
-console.log(sumOfAllElements());
+console.log(sumOfAllElements([4, 7, 1]));
 
 /* 9. Create a function to test if an array of lenght 2 contains 1 OR 3. 
     Return `true` is it does, `false` if it doesn't. */
-let smallArray = [4 , 6]
-function testAnArray(){
-    for(let i=0; i<smallArray.length; i++){
-        if(smallArray[i] === 1 || smallArray[i] === 3){
-            return true;  
+   function testAnArray(arr) {
+        if (arr.includes(1) || arr.includes(3)) {
+            return true
+        } else {
+            return false
         }
-        else {
-            return false;
-        } 
     }
-}
 
-console.log(testAnArray())
+console.log(testAnArray([11 , 13]));
 
 /* 10. Create a function to test if an array of lenght 2 DOES NOT contain 1 or 3. 
     Return `true` if it doesn't, `false` if it does. */ 
-    let smallArrayNew = [10, 6]
-    function testAnArrayNew(){
-        const objectKeys = Object.keys(smallArrayNew);
-        objectKeys;
-        for(let i=0; i<objectKeys.length; i++){
-            if((objectKeys[i] !== 1) || (objectKeys[i] !== 3)){
-                return true;  
-            }
-            else {
-                return false;
-            } 
+
+    function testAnArrayNew(arr) {
+        if (!arr.includes(1) || !arr.includes(3)) {
+            return true
+        } else {
+            return false
         }
     }
-    
-    console.log(testAnArrayNew());
 
-/* 11. Create a function to find the longest string from a given array of strings. 
-    Pass the array as parameter and return the longest string. */ 
-let arrayOfString = ["css" , "html" , "javascript" , "golang"]
+console.log(testAnArrayNew([11 , 13]));
+
+// 11. Create a function to find the longest string from a given array of strings. 
+//     Pass the array as parameter and return the longest string.
     function longestStringOfArray(){
-        const objectValues = Object.values(arrayOfString);
-        objectValues;
-        for(let i=0; i<objectValues.length; i++){
-            let eachStringLength = objectValues[i].length
-        let emptyArr = []; 
-          return emptyArr.push(eachStringLength) 
-    
+        let arrayOfString = ["css" , "html" , "javascript" , "golang"];
+        for(let i=0; i<arrayOfString.length; i++){
+           let eachStringLength = arrayOfString[i].length
+           let emptyArr = [].push(eachStringLength);
+           return emptyArr
         }
         
 }
