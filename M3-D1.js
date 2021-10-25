@@ -97,12 +97,38 @@ console.log(testAnArray())
 
 /* 10. Create a function to test if an array of lenght 2 DOES NOT contain 1 or 3. 
     Return `true` if it doesn't, `false` if it does. */ 
-
+    let smallArrayNew = [10, 6]
+    function testAnArrayNew(){
+        const objectKeys = Object.keys(smallArrayNew);
+        objectKeys;
+        for(let i=0; i<objectKeys.length; i++){
+            if((objectKeys[i] !== 1) || (objectKeys[i] !== 3)){
+                return true;  
+            }
+            else {
+                return false;
+            } 
+        }
+    }
+    
+    console.log(testAnArrayNew());
 
 /* 11. Create a function to find the longest string from a given array of strings. 
     Pass the array as parameter and return the longest string. */ 
+let arrayOfString = ["css" , "html" , "javascript" , "golang"]
+    function longestStringOfArray(){
+        const objectValues = Object.values(arrayOfString);
+        objectValues;
+        for(let i=0; i<objectValues.length; i++){
+            let eachStringLength = objectValues[i].length
+        let emptyArr = []; 
+          return emptyArr.push(eachStringLength) 
+    
+        }
+        
+}
 
-
+console.log(longestStringOfArray())
 /* 12. Create a function to find the types of a given angle:
   1. Acute angle â‡’ between 0 and 90 degrees. Return `acute`.
     2. Right angle â‡’ 90 degree. Return `right`
