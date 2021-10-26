@@ -124,11 +124,40 @@ console.log(longestStringOfArray(["css" , "html" , "javascript"]))
     Pass the angle as a parameter.
 */
 
+function angleType(angle) {
+  switch (true) {
+    case angle >= 0 && angle < 90: return "Acute angle";
+      break;
+    case angle === 90: return "Right angle";
+      break;
+    case angle > 90 && angle < 180: return "Obtuse angle";
+      break;
+    case angle === 180: return "Straight angle";
+      break;
+    default: return "not an angle";
+      break;
+  }
+}
+console.log(angleType(180));
 
-/* 13. Create a function to find and return the index of the greatest element of a given array of integers that you passed as a parameter. */
+/* 13. Create a function to find and return the index of the greatest element of a given array
+ of integers that you passed as a parameter. */
+function greatestNumberIndex(arr){
+   let bigestNumber = 0;
+   for (let i=0; i<arr.length; i++){
+       const currentNumber = arr[i];
+       if(currentNumber>bigestNumber){
+           bigestNumber =  currentNumber;
+       }
+   }
+   const indexOfBigestNumber = arr.indexOf(bigestNumber);
+   return indexOfBigestNumber
+}
 
+console.log(greatestNumberIndex([12, 1, 25, 76, 2]))
 
-/* 14. Create a function to find and return the largest **even** number from an array of integers that is passed a parameter. */
+/* 14. Create a function to find and return the largest **even** number from an array of integers 
+that is passed a parameter. */
 
 
 /* 15. Create a function to check from two given integers (passed as parameters) if one is positive and the other is negative. 
