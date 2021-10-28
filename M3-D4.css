@@ -1,0 +1,17 @@
+body{
+    background-color: rgb(241, 250, 249);
+}
+
+.navbar{
+    background-color: transparent;
+}
+
+.navbar .fa-cart-plus{
+    padding-right: 10px;
+    color: rgb(83, 155, 20);
+    font-size: 20px;
+}
+
+.navbar .fa-cart-plus:hover{
+    zoom: 120%;
+}
