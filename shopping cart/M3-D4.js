@@ -23,11 +23,11 @@ window.onload = () =>{
         const booksInfo = document.getElementById('books-container');
         for (let bookIndex=0; bookIndex<arrayOfBooks.length; bookIndex++){
             booksInfo.innerHTML +=  `<div class="col-3"> <div class="card m-3">
-            <img src="${arrayOfBooks[bookIndex].img}"   class="card-img-top" alt="...">
+            <img src="${arrayOfBooks[bookIndex].img}" height=300px"  class="card-img-top" alt="...">
             <div class="card-body">
              <h5 class="card-title">${arrayOfBooks[bookIndex].title}</h5>
-             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+             <p class="card-text">${arrayOfBooks[bookIndex].asin}<br>Category: ${arrayOfBooks[bookIndex].category} </p>
+            <a href="#" class="btn btn-success">Add to cart</a>
            </div>
            </div>
            </div>`            
