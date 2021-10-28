@@ -7,11 +7,9 @@
 // Template literal example:
 // `<div>Title: ${books[i].title}</div>`
 
-// let node = document.createElement("div");
-            // node.classList.add("card col-2");
-            // let cardImag= document.createElement('img');
-            // cardImag.src = body[i].img
-            // node.appendChild('img'); 
+
+let books = [];
+
 
 window.onload = () =>{
     fetch("https://striveschool-api.herokuapp.com/books")
@@ -20,18 +18,31 @@ window.onload = () =>{
         return response.json()
     })
     .then((arrayOfBooks) => {
+        books = arrayOfBooks;
+
         const booksInfo = document.getElementById('books-container');
         for (let bookIndex=0; bookIndex<arrayOfBooks.length; bookIndex++){
-            booksInfo.innerHTML +=  `<div class="col-3"> <div class="card m-3">
-            <img src="${arrayOfBooks[bookIndex].img}" height=300px"  class="card-img-top" alt="...">
+            booksInfo.innerHTML +=  `<div class="col-lg-2 col-md-3 col-sm-6"> <div class="card mx-1 mb-4">
+            <img src="${arrayOfBooks[bookIndex].img}" height=270px"  class="card-img-top" alt="...">
             <div class="card-body">
-             <h5 class="card-title">${arrayOfBooks[bookIndex].title}</h5>
-             <p class="card-text">${arrayOfBooks[bookIndex].asin}<br>Category: ${arrayOfBooks[bookIndex].category} </p>
-            <a href="#" class="btn btn-success">Add to cart</a>
+              <h5 class="card-title">${arrayOfBooks[bookIndex].title}</h5>
+              <p class="card-text">${arrayOfBooks[bookIndex].asin}<br>Category: ${arrayOfBooks[bookIndex].category} </p>
+              <div class="buttons-add-skip">
+              <button class="btn btn-success">Add</button>
+              <button class="btn btn-dark">skip</button>
+              </div>
            </div>
            </div>
-           </div>`            
+           </div>`          
         }
-    })
+    });
+    const addToCart = () => {
+        let shoppingCart = document.getElementById('shoppingCart')
+        shoppingCart.innerHTML = `<div class='shoping-list'><ul><li><p>${arrayOfBooks[bookIndex].title}</p></li><ul></div>`
+        console.log(books[index])
+    };
 
+    let addTo = document.querySelector('btn-success')
+    addTo.addEventListener('click', addToCart);
+    
 }

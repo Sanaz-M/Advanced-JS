@@ -1,14 +1,26 @@
-body{
-    background-color: rgb(241, 250, 249);
+
+h4{
+    margin-left: 5px;
 }
 
+/* Navbar */
 .navbar{
-    background-color: transparent;
+    position: fixed;
+    background: rgb(109, 95, 77);
+}
+
+.navbar .navbar-brand{
+    color: rgb(221, 219, 219);
+    font-weight: 700;
+}
+
+.navbar .nav-link{
+    color: rgb(221, 219, 219);
 }
 
 .navbar .fa-cart-plus{
     padding-right: 10px;
-    color: rgb(83, 155, 20);
+    color: rgb(236, 247, 226);
     font-size: 20px;
 }
 
@@ -16,3 +28,29 @@ body{
     zoom: 120%;
 }
 
+/* Cards */
+.card-title{
+    font-size: 14px;
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.card-text{
+    font-size: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.buttons-add-skip{
+    display: flex;
+    justify-content: center;
+    justify-self: center;
+    justify-items: center;
+}
+
+.buttons-add-skip button{
+    border-radius: 0px;
+}
