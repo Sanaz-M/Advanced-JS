@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" 
+    integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    
+    <title>Back Office</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="width: 100%;">
+        <a class="navbar-brand" href="#">Strivazon</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#"><span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="./">Product</a>
+              </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./">Back Office</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    <div class="container">
+      <div id="product-section" class="col-md-8 offset-2 mt-4">
+          <h2>Back Office</h2>
+          <hr>
+          <form onsubmit="insertProduct(event)">
+            <div class="form-group">
+              <label for="name" class="mb-0 pb-0">Name</label>
+              <input class="form-control" id="name" placeholder="name" required/>
+            </div>
+      
+            <div class="form-group">
+              <label for="brand" class="mb-0 pb-0">Brand</label>
+              <input class="form-control" id="brand" placeholder="Apple" required/>
+            </div>
+      
+            <div class="form-group">
+              <label for="description" class="mb-0 pb-0">Description</label>
+              <textarea class="form-control" id="description" rows="4"></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="price" class="mb-0 pb-0">Price</label>
+              <input class="form-control" id="price" placeholder="0" required>
+            </div>
+
+            <div class="form-group">
+              <label for="imageUrl" class="mb-0 pb-0">Image URL</label>
+              <input class="form-control" id="imageUrl" placeholder="insert image URL" required/>
+            </div>
+      
+            <div class="form-group d-flex justify-content-start">
+              <button id="delete-btn" type="button" class="d-none btn btn-danger mr-auto w-25" onclick="deleteProduct()">
+                <ion-icon name="trash-outline"></ion-icon>
+              </button>
+              <button type="reset" class="btn btn-outline-dark mr-2 w-10">
+                Reset
+              </button>
+              <button type="submit" class="btn btn-primary mr-2 w-20">Add New Item</button>
+            </div>
+          </form>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+   
+   <script src="M3-D8.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+   integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+   crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+   integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+   crossorigin="anonymous"></script>
+</body>
+</html>
