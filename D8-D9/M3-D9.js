@@ -24,6 +24,7 @@ const fetchProducts = async () => {
         console.log(error)
     }
 }
+
 const displayProduct = (products) => {
 
     console.log(products)
@@ -35,7 +36,7 @@ const displayProduct = (products) => {
                               <div class="card-body">
                                 <h5 class="card-title">${product.name}</h5>
                                 <p class="card-text">{${product.description}}</p>
-                                <a href="#" id="more-details">More Details</a>
+                                <a id="more-details" href="details.html?id=${product._id}">More Details</a>
                               </div>
                             </div>`
     });
