@@ -14,30 +14,16 @@ const productDetails = async () => {
         const productData = await response.json()
         console.log(productData)
 
-
-    
-        // const productData = () => {
-
-        //     const eachProductDetail ={
-        //     name : document.getElementById('name').value,
-        //     description : document.getElementById('description').value,
-        //     brand : document.getElementById('brand').value,
-        //     imageUrl: document.getElementById('imageUrl').value,
-        //     price : document.getElementById('price').value,
-        //     id : document.getElementById('_id').value,
-        //     createdAt : document.getElementById('createdAt').value,
-        //     updatedAt : document.getElementById('updatedAt').value,
-        // };
-        
         const productDetails = document.getElementById("product-detail")
 
         productDetails.innerHTML = `
-                <h2 class="mb-2" style="line-height: 1;">${productData.name}</h1>
-                <p class="text-monospace mb-3">${new Date().toLocaleString()}</p>
+        <img src="${productData.imageUrl}" alt="details image" width="200px" height="200px">
+                <h4 class="mb-2" style="line-height: 1;">${productData.name}</h4>
                     <p>${productData.description}</p>
                     <h6 class="bg-light py-3 pl-2">Server Details</h6>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item pl-2"><strong>id:</strong> ${productData._id}</li>
+                        <li class="list-group-item pl-2"><strong>price:</strong> ${productData.price}€</li>
                         <li class="list-group-item pl-2"><strong>createdAt:</strong> ${new Date(productData.createdAt).toLocaleDateString()}</li>
                         <li class="list-group-item pl-2"><strong>updatedAt:</strong> ${new Date(productData.updatedAt).toLocaleDateString()}</li>
                     </ul>

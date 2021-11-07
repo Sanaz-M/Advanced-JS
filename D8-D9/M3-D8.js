@@ -15,7 +15,7 @@ const insertProduct = async (event) => {
 
     try{
         const response = await fetch(url, {
-            method: 'POST',
+            method:'POST',
             headers: {
                 "Content-Type": "application/json",
                 "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTgyOGJmM2FhY2FhMjAwMTU1MmExNmQiLCJpYXQiOjE2MzU5NDU0NTksImV4cCI6MTYzNzE1NTA1OX0.68CC8Jf4IHn7VZW39FPf-bHEv8MKux00DbaR2yT026Y"
@@ -37,11 +37,19 @@ const insertProduct = async (event) => {
         const form = document.querySelector('form')
         form.onsubmit = insertProduct;
         productDetails()
+
+        if(productId){
+            document.getElementById('submit-btn').innerText = "Update Product";
+        }
+        else{
+            document.getElementById('submit-btn').innerText = "Add Product";
+        }
     };
 
     const productDetails = async () => {
 
         const response = await fetch(url + productId, {
+            method : "PUT",
             headers: {
                 "Content-Type": "application/json",
                 "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTgyOGJmM2FhY2FhMjAwMTU1MmExNmQiLCJpYXQiOjE2MzU5NDU0NTksImV4cCI6MTYzNzE1NTA1OX0.68CC8Jf4IHn7VZW39FPf-bHEv8MKux00DbaR2yT026Y"
@@ -65,8 +73,7 @@ const insertProduct = async (event) => {
         //     updatedAt : document.getElementById('updatedAt').value,
         // };
         
-        const productDetails = document.getElementById("product-detail")
-
+       
        
     document.getElementById("name").value = productData.name
     document.getElementById("description").value = productData.description
