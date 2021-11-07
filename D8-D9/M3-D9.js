@@ -31,8 +31,8 @@ const displayProduct = (products) => {
     const cards = document.getElementById('productsCards')
 
     products.forEach(product => {
-        cards.innerHTML += `<div class="card mx-2 mb-3" style="width: 150px; height: 200px;">
-                                <img src="${product.imageURL}" class="card-img-top" alt="...">
+        cards.innerHTML += `<div class="card mx-2 mb-3" style="width: 150px; height: 300px;">
+                                <img src="${product.imageUrl}" class="card-img-top" alt="..." width="100px" height="150px">
                               <div class="card-body">
                                 <h5 class="card-title">${product.name}</h5>
                                 <p class="card-text">{${product.description}}</p>

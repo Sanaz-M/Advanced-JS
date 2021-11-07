@@ -1,7 +1,7 @@
 const newUrl = new URLSearchParams(window.location.search)
-const productId = newUrl.get("id")
+const productId = newUrl.get("productId")
 
-const url = "https://striveschool-api.herokuapp.com/api/product/" + productId;
+const url = "https://striveschool-api.herokuapp.com/api/product/" + productId ;
 
 const productDetails = async () => {
 
@@ -12,7 +12,6 @@ const productDetails = async () => {
             },
         })
         const productData = await response.json()
-        console.log(productData)
 
         const productDetails = document.getElementById("product-detail")
 
@@ -31,7 +30,8 @@ const productDetails = async () => {
 
     return productData
 }
-    productDetails();
+
+productDetails();
 
     const jumpToditPage = () => {
         window.location.assign('M3-D8.html?productId=' + productId)

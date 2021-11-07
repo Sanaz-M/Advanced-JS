@@ -25,7 +25,14 @@ const insertProduct = async (event) => {
 
         if(response.ok) {
             const res = await response.json()
-            alert("Product created successfully with an id: " + res._id)
+            if(productId){
+                alert("Product updated successfully")
+                window.location.assign("details.html")
+            }
+            else{
+                alert("Product created successfully with an id: " + res._id)
+            }
+            
         }
     }
         catch (error) {
@@ -40,6 +47,7 @@ const insertProduct = async (event) => {
 
         if(productId){
             document.getElementById('submit-btn').innerText = "Update Product";
+            document.getElementById("delete-btn").classList.remove('d-none')
         }
         else{
             document.getElementById('submit-btn').innerText = "Add Product";
@@ -82,4 +90,24 @@ const insertProduct = async (event) => {
     document.getElementById("imageUrl").value = productData.imageUrl
 
     return productData
+}
+
+const deleteProduct = async () =>{
+    try {
+        const response = await fetch(url + productId, {
+            method : "DELETE",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTgyOGJmM2FhY2FhMjAwMTU1MmExNmQiLCJpYXQiOjE2MzU5NDU0NTksImV4cCI6MTYzNzE1NTA1OX0.68CC8Jf4IHn7VZW39FPf-bHEv8MKux00DbaR2yT026Y"
+            },
+        });
+        if(response.ok){
+           const deleteObj = await response.json()
+           alert(`Product ${deleteObj.name} deleted successfully!`)
+           window.location.assign("product.html")
+        } 
+    }
+    catch(error){
+        alert(error)
+    }
 }
